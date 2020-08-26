@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<style type="text/css">
+		
+* {
+	box-sizing: border-box;
+}
+body {
+	font-family: 'Montserrat', sans-serif;
+	line-height: 1.6;
+	margin: 0;
+	min-height: 100vh;
+}
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+
+h2,
+h3,
+a {
+	color: #34495e;
+}
+
+a {
+	text-decoration: none;
+}
+
+
+
+.logo {
+	margin: 0;
+	font-size: 1.45em;
+}
+
+.main-nav {
+	margin-top: 5px;
+
+}
+.logo a,
+.main-nav a {
+	padding: 10px 15px;
+	text-transform: uppercase;
+	text-align: center;
+	display: block;
+}
+
+.main-nav a {
+	color: #34495e;
+	font-size: .99em;
+}
+
+/*.main-nav a:hover {
+	color: #718daa;
+}*/
+
+
+
+.header {
+	position: fixed;
+	width:100vw;
+	padding-top: .5em;
+	padding-bottom: .5em;
+/*	border: 1px solid #a2a2a2;*/
+	background-color: #ffffff;
+	-webkit-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);
+	box-shadow: 0px 0px 26px 0px rgba(0,0,0,0.3);
+
+}
+
+
+/* ================================= 
+  Media Queries
+==================================== */
+
+
+.main-nav li:hover{
+		background-color: #f4f4f4;
+	}
+
+@media (min-width: 769px) {
+	.header,
+	.main-nav {
+		padding:0;
+		display: flex;
+	}
+	.header {
+		flex-direction: column;
+		align-items: center;
+    	
+	}
+	.main-nav{
+		margin:0;
+		height: 50px;
+	}
+	.main-nav a{
+		padding: 0;
+		font-size: 15px;
+		padding: 13px 17px;
+	}
+
+}
+
+@media (min-width: 1025px) {
+	.header {
+		height: 65px;
+		padding: 0;
+		flex-direction: row;
+		justify-content: space-between;
+	}
+	.main-nav li:not(.first_li){
+			border-left: 1px solid #e8e8e8;
+			
+
+	}
+	.main-nav li{/*
+		width:100px;*/
+		height:100%;
+
+	}
+	.main-nav li:hover{
+		background-color: #f4f4f4;
+	}
+	.last_li{
+		margin-right: 5px;
+	}
+	.main-nav{
+		margin-top: 0;
+		height: 100%;
+	}
+	.main-nav a{
+		padding: 0;
+		font-size: 15px;
+		padding: 20.5px 25px;
+	}
+}
+
+	</style>
+</head>
+<body>
+	<header class="header">
+		<h1 class="logo"><a href="#">Flexbox</a></h1>
+      <ul class="main-nav">
+          <li class="first_li"><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Recipes</a></li>
+          <li class="last_li"><a href="#">Contact</a></li>
+      </ul>
+	</header> 
+	<div style="height:2000px;"></div>
+</body>
+</html>
+<script type="text/javascript">
+	$(window).on('scroll', function () {
+    var scrollTop = $(window).scrollTop();
+    if (scrollTop > 50) {
+        $('.header').stop().animate({height: "65px"},200);
+ 		$('.main-nav a').hide();
+    }
+    else {
+         $('.header').stop().animate({height: "250px"},200);   
+         $('.main-nav a').show();  
+          
+    }
+});
+</script>

@@ -63,10 +63,12 @@ a {
 
 
 .header {
+	transition: 1.4s;
+/*	height: 65px;*/
 	position: fixed;
 	width:100vw;
-	padding-top: .5em;
-	padding-bottom: .5em;
+	/*padding-top: .5em;
+	padding-bottom: .5em;*/
 /*	border: 1px solid #a2a2a2;*/
 	background-color: #ffffff;
 	-webkit-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);
@@ -88,6 +90,7 @@ a {
 @media (min-width: 769px) {
 	.header,
 	.main-nav {
+		transition: 1.4s;
 		padding:0;
 		display: flex;
 	}
@@ -141,6 +144,14 @@ a {
 		padding: 20.5px 25px;
 	}
 }
+.addHeight{
+	height: 250px;
+	transition: 1.4s;
+}
+
+.baseHeight{
+	height: 65px;
+}
 
 	</style>
 </head>
@@ -158,16 +169,50 @@ a {
 </body>
 </html>
 <script type="text/javascript">
-	$(window).on('scroll', function () {
-    var scrollTop = $(window).scrollTop();
+
+		
+	$( window ).resize(function(){
+var windowWidth = $( window ).width();
+		if(windowWidth < 770){
+ 		var scrollTop = $(window).scrollTop();
     if (scrollTop > 50) {
-        $('.header').stop().animate({height: "65px"},200);
- 		$('.main-nav a').hide();
+       $('.header').removeClass('addHeight');
+          $('.header').addClass('baseHeight'); 
+ 		$('.main-nav a').fadeOut();
     }
     else {
-         $('.header').stop().animate({height: "250px"},200);   
-         $('.main-nav a').show();  
+         $('.header').addClass('addHeight'); 
+            $('.header').removeClass('baseHeight'); 
+         $('.main-nav a').fadeIn();  
           
     }
+		}else{
+			 $('.main-nav a').fadeIn();  
+			 $('.header').removeClass('baseHeight');
+			    $('.header').removeClass('addHeight'); 
+		}
+		});
+
+
+	$(window).on('scroll', function () {
+		var windowWidth = $( window ).width();
+		if(windowWidth < 770){
+ 		var scrollTop = $(window).scrollTop();
+    if (scrollTop > 50) {
+       $('.header').removeClass('addHeight');
+          $('.header').addClass('baseHeight'); 
+ 		$('.main-nav a').fadeOut();
+    }
+    else {
+         $('.header').addClass('addHeight'); 
+            $('.header').removeClass('baseHeight'); 
+         $('.main-nav a').fadeIn();  
+          
+    }
+		}else{
+			 $('.header').removeClass('baseHeight');
+			    $('.header').removeClass('addHeight'); 
+		}
+   
 });
 </script>

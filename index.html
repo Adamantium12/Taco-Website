@@ -169,50 +169,31 @@ a {
 </body>
 </html>
 <script type="text/javascript">
+//On window resize/scroll
+$(window).on('scroll resize ', function() {
+	//Check if the window is small enough for mobile
+    var windowWidth = $(window).width();
+    if (windowWidth < 770) {
+    	//Get scroll position
+        var scrollTop = $(window).scrollTop();
+        if (scrollTop > 50) {
+        	//Shrink header to smaller hieght and fade Out the links
+            $('.header').removeClass('addHeight');
+            $('.header').addClass('baseHeight');
+            $('.main-nav a').fadeOut();
+        } else {
+        	//Expand the header to bigger hieght and fade in the links
+            $('.header').addClass('addHeight');
+            $('.header').removeClass('baseHeight');
+            $('.main-nav a').fadeIn();
 
-		
-	$( window ).resize(function(){
-var windowWidth = $( window ).width();
-		if(windowWidth < 770){
- 		var scrollTop = $(window).scrollTop();
-    if (scrollTop > 50) {
-       $('.header').removeClass('addHeight');
-          $('.header').addClass('baseHeight'); 
- 		$('.main-nav a').fadeOut();
+        }
+    } else {
+    	//If the window is bigger than mobile mode show the links and reset the height so that the media querys have priority
+        $('.header').removeClass('baseHeight');
+        $('.header').removeClass('addHeight');
+        $('.main-nav a').fadeIn();
     }
-    else {
-         $('.header').addClass('addHeight'); 
-            $('.header').removeClass('baseHeight'); 
-         $('.main-nav a').fadeIn();  
-          
-    }
-		}else{
-			 $('.main-nav a').fadeIn();  
-			 $('.header').removeClass('baseHeight');
-			    $('.header').removeClass('addHeight'); 
-		}
-		});
 
-
-	$(window).on('scroll', function () {
-		var windowWidth = $( window ).width();
-		if(windowWidth < 770){
- 		var scrollTop = $(window).scrollTop();
-    if (scrollTop > 50) {
-       $('.header').removeClass('addHeight');
-          $('.header').addClass('baseHeight'); 
- 		$('.main-nav a').fadeOut();
-    }
-    else {
-         $('.header').addClass('addHeight'); 
-            $('.header').removeClass('baseHeight'); 
-         $('.main-nav a').fadeIn();  
-          
-    }
-		}else{
-			 $('.header').removeClass('baseHeight');
-			    $('.header').removeClass('addHeight'); 
-		}
-   
 });
 </script>

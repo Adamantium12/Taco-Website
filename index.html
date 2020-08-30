@@ -90,7 +90,7 @@ a {
 		background-color: #f4f4f4;
 	}
 
-@media (min-width: 769px) {
+@media (min-width: 797px) {
 	.header,
 	.main-nav {
 		transition: 1.4s;
@@ -257,10 +257,10 @@ function myFunction() {
 }
 
 //On window resize/scroll
-$(window).on('laod resize', function() {
+$(window).on('load resize', function() {
 	//Check if the window is small enough for mobile
     var windowWidth = $(window).width();
-    if (windowWidth < 770) {
+    if (windowWidth < 780) {
     	//Show hamburger icon
     	$('.icon')[0].style.display = "block";
     	//check if hamburger is open or not
@@ -271,7 +271,7 @@ $(window).on('laod resize', function() {
     		//Change dropdown
     		$('.main-nav')[0].style.display = "block"; 
     	}    	 	
-    } else {
+    } else{
     	//If the window is bigger than mobile mode it show the links  
         $('.main-nav a').fadeIn();
         //Change dropdown to reconfigure

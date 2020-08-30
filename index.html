@@ -2,10 +2,12 @@
 <html>
 <head>
 	<title></title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<style type="text/css">
-		
+
 * {
 	box-sizing: border-box;
 }
@@ -40,6 +42,7 @@ a {
 }
 
 .main-nav {
+	display: none;
 	margin-top: 5px;
 
 }
@@ -152,12 +155,76 @@ a {
 .baseHeight{
 	height: 65px;
 }
-
+.icon {
+  position: absolute;
+  right: 40px;
+  top: 12.25px;
+} .menu-wrapper {
+	/* position: absolute;
+	 top: 0;
+	 left: 0;
+	 right: 0;
+	 bottom: 0;
+	 margin: auto;
+	 width: 100px;
+	 height: 60px;
+	 cursor: pointer;*/
+		 width: 30px;
+	 height: 35px;
+}
+ .hamburger-menu, .hamburger-menu:after, .hamburger-menu:before {
+	 width: 30px;
+	 height: 3px;
+}
+ .hamburger-menu {
+	 position: relative;
+	 transform: translateY(12px);
+	 background: rgba(0, 0, 0, 1);
+	 transition: all 0ms 300ms;
+}
+ .hamburger-menu.animate {
+	 background: rgba(0, 0, 0, 0);
+}
+ .hamburger-menu:before {
+	 content: "";
+	 position: absolute;
+	 left: 0;
+	 bottom: 7.5px;
+	 background: rgba(0, 0, 0, 1);
+	 transition: bottom 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+ .hamburger-menu:after {
+	 content: "";
+	 position: absolute;
+	 left: 0;
+	 top: 7.5px;
+	 background: rgba(0, 0, 0, 1);
+	 transition: top 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+ .hamburger-menu.animate:after {
+	 top: 0;
+	 transform: rotate(45deg);
+	 transition: top 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+ .hamburger-menu.animate:before {
+	 bottom: 0;
+	 transform: rotate(-45deg);
+	 transition: bottom 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+ 
+	
 	</style>
 </head>
 <body>
+	
 	<header class="header">
 		<h1 class="logo"><a href="#">Flexbox</a></h1>
+
+		<a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    		<div class="menu-wrapper">
+  <div class="hamburger-menu"></div>	  
+</div>
+  		</a> 
       <ul class="main-nav">
           <li class="first_li"><a href="#">Home</a></li>
           <li><a href="#">About</a></li>
@@ -169,30 +236,48 @@ a {
 </body>
 </html>
 <script type="text/javascript">
+	(function () {
+	$('.menu-wrapper').on('click', function() {
+		$('.hamburger-menu').toggleClass('animate');
+	})
+})();
+	var open = false;
+//Function called from hamburger press
+function myFunction() {
+	//Get Navigation element
+  var x = $('.main-nav')[0];
+  //Do the opposite of the current state of the element
+  if (x.style.display === "block") {
+  	open = false;
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+    open = true;
+  }
+}
+
 //On window resize/scroll
-$(window).on('scroll resize ', function() {
+$(window).on('laod resize', function() {
 	//Check if the window is small enough for mobile
     var windowWidth = $(window).width();
     if (windowWidth < 770) {
-    	//Get scroll position
-        var scrollTop = $(window).scrollTop();
-        if (scrollTop > 50) {
-        	//Shrink header to smaller hieght and fade Out the links
-            $('.header').removeClass('addHeight');
-            $('.header').addClass('baseHeight');
-            $('.main-nav a').fadeOut();
-        } else {
-        	//Expand the header to bigger hieght and fade in the links
-            $('.header').addClass('addHeight');
-            $('.header').removeClass('baseHeight');
-            $('.main-nav a').fadeIn();
-
-        }
+    	//Show hamburger icon
+    	$('.icon')[0].style.display = "block";
+    	//check if hamburger is open or not
+    	if (open == false) {
+    		//Change dropdown
+ 			$('.main-nav')[0].style.display = "none";   
+    	}else{
+    		//Change dropdown
+    		$('.main-nav')[0].style.display = "block"; 
+    	}    	 	
     } else {
-    	//If the window is bigger than mobile mode show the links and reset the height so that the media querys have priority
-        $('.header').removeClass('baseHeight');
-        $('.header').removeClass('addHeight');
+    	//If the window is bigger than mobile mode it show the links  
         $('.main-nav a').fadeIn();
+        //Change dropdown to reconfigure
+        $('.main-nav')[0].style.display = "flex";
+        //Hide hamburger icon
+        $('.icon')[0].style.display = "none";
     }
 
 });

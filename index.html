@@ -7,7 +7,14 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<style type="text/css">
-
+@font-face {
+  font-family: 'MyWebFont';
+ 
+  src: url('sprayme.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('sprayme.woff') format('woff'), /* Modern Browsers */
+       url('sprayme.ttf')  format('truetype'); /* Safari, Android, iOS */
+   
+}
 * {
 	box-sizing: border-box;
 }
@@ -76,6 +83,7 @@ a {
 /*	height: 65px;*/
 	position: fixed;
 	width:100vw;
+	top:0;
 	/*padding-top: .5em;
 	padding-bottom: .5em;*/
 /*	border: 1px solid #a2a2a2;*/
@@ -217,7 +225,18 @@ a {
 	 transform: rotate(-45deg);
 	 transition: bottom 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);
 }
- 
+.title{
+	font-family: MyWebFont;
+	text-align: center;
+	font-size: 5em; 
+	margin-top: 500px;
+	padding:0;
+	letter-spacing: 0.05em;
+	 -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    text-shadow:1px 1px 1px rgba(0,0,0,0.004) !important;}
+}
 	
 	</style>
 </head>
@@ -238,7 +257,10 @@ a {
           <li class="last_li"><a href="#">Contact</a></li>
       </ul>
 	</header> 
-	<div style="height:2000px;"></div>
+	<div style="height:2000px;">
+		<h1 class="title">This is a header</h1>
+
+	</div>
 </body>
 </html>
 <script type="text/javascript">

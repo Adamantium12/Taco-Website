@@ -1,8 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title></title>
-  <style type="text/css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <title>Parallax</title>
+  <style>
 
   .parallax {
     height: 100vh;
@@ -39,6 +41,7 @@
 
   .parallax {
     font-size: 200%;
+
   }
 
    /* add some padding to force scrollbars */
@@ -47,25 +50,46 @@
   }
 
    /* centre the content in the parallax layers */
-  .title {
+  .box {
+    width:300px;
+    height:300px;
+    background-color: red;
     position: absolute;
-    left: 50%;
-    top: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+    left: 20%;
+    top:20%;
+       transform: translate(-50%, 0);
   }
+.title {
 
-  </style>
+    height:300px;
+    background-color: blue;
+    position: absolute;
+ 
+    top:20%;
+    /*transform: translate(-50%, 0);*/
+  }
+  </style>  
 </head>
 <body>
 <div class="parallax">
+
     <div class="parallax__layer parallax__layer--back">
       <div class="title">This is the background</div>
     </div>
     <div class="parallax__layer parallax__layer--base">
-      <div class="title">This is the foreground</div>
+      <div class="box"></div>
     </div>
   </div>
 </body>
 </html>
 
+<script type="text/javascript">
+  
+  $(window).on('load resize scroll', function() {
+     var windowWidth = $(window).width();
+  
+      $('.title')[0].style.width = windowWidth+"px";
+    console.log("dsgydg");
+
+  });
+</script>

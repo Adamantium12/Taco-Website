@@ -5,13 +5,16 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <title>Parallax</title>
   <style>
+html, body{ 
+    overflow-x: hidden;
+    box-sizing: border-box;
 
+ }
   .parallax {
     height: 100vh;
     overflow-x: hidden;
     overflow-y: auto;
-    -webkit-perspective: 1px;
-    perspective: 1px;
+
   }
 
   .parallax__layer {
@@ -57,12 +60,12 @@
     background-color: red;
     position: absolute;
     left: 20%;
-    top:20%;
+    top:30%;
        transform: translate(-50%, 0);
   }
 .title {
 
-    height:300px;
+    height:800px;
     background-color: blue;
     position: absolute;
  
@@ -93,4 +96,17 @@
     console.log("dsgydg");
 
   });
+
+
+$(document).ready(function(){
+  $(window).scroll(function(e){
+    parallaxScroll();
+  });
+   
+  function parallaxScroll(){
+    var scrolled = $(window).scrollTop();
+    $('.parallax__layer--base').css('top',(0-(scrolled*.55))+'px');
+  }
+ 
+ }); 
 </script>

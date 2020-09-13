@@ -55,21 +55,27 @@ html, body{
 
    /* centre the content in the parallax layers */
   .box {
-    width:300px;
-    height:300px;
-    background-color: red;
+    width:841px;
+    height:399px;
+    background-image: url(pan.png);
+    background-size: 841px 399px;
+    background-position: center;
+    background-repeat: no-repeat;
     position: absolute;
-    left: 20%;
-    top:30%;
-       transform: translate(-50%, 0);
+    left: 25%;
+    top:80%;
+       transform: translate(-50%, 0) scaleX(-1) rotate(-13deg);
   }
 .title {
 
-    height:800px;
-    background-color: blue;
+    height:1618px;
+    background-image: url(paper.png);
+    background-size: 2186px 1618px;
+    background-position: center;
+    background-repeat: no-repeat;
     position: absolute;
  
-    top:20%;
+    top:40%;
     /*transform: translate(-50%, 0);*/
   }
   </style>  
@@ -78,7 +84,7 @@ html, body{
 <div class="parallax">
 
     <div class="parallax__layer parallax__layer--back">
-      <div class="title">This is the background</div>
+      <div class="title"></div>
     </div>
     <div class="parallax__layer parallax__layer--base">
       <div class="box"></div>

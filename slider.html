@@ -3,9 +3,18 @@
 <head>
 	<title></title>
 	<style type="text/css">
-	
-@import url(https://fonts.googleapis.com/css?family=Istok+Web);
-@keyframes slidy {
+	@font-face {
+  font-family: 'MyWebFont';
+  src: url('boston.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+      
+       url('boston.ttf') format('truetype'); /* Safari, Android, iOS */
+    font-weight: normal;
+    font-style: normal; 
+    -webkit-font-smoothing: antialiased;
+    font-kerning: auto;
+}
+/*@import url(https://fonts.googleapis.com/css?family=Istok+Web);*/
+/*@keyframes slidy {
 0% { left: 0%; }
 20% { left: 0%; }
 25% { left: -100%; }
@@ -15,13 +24,13 @@
 75% { left: -300%; }
 95% { left: -300%; }
 100% { left: -400%; }
-}
+}*/
 * {
   box-sizing: border-box;
 }
 body, figure { 
   margin: 0; 
-  font-family: Istok Web, sans-serif;
+  font-family: MyWebFont;
   font-weight: 100;
 }
 div#captioned-gallery { 
@@ -60,6 +69,15 @@ figure.slider figure figcaption {
   padding: .6rem; 
 }
 
+.card_header{
+	font-size: 30px;
+	font-family: MyWebFont;
+	height: 500px;
+	  font-size: 5em; 
+ color:black;
+  padding:0;
+  letter-spacing: 0.05em;
+}
 
 	</style>
 </head>
@@ -68,7 +86,19 @@ figure.slider figure figcaption {
 <div id="captioned-gallery">
 	<figure class="slider">
 		<figure>
-			<img >
+			<div class="card_header">Cheese Taco</div>
+			<div class="card_text">Cheese Taco</div>
+			<div class="card_review">5.0</div>
+			<div class="card_link">Take Me To The Recipe!</div>
+			<div class="card_image"></div>
+			<figcaption></figcaption>
+		</figure>
+		<!-- <figure>
+			<img>
+			<figcaption></figcaption>
+		</figure>
+		<figure>
+			<img>
 			<figcaption></figcaption>
 		</figure>
 		<figure>
@@ -78,15 +108,7 @@ figure.slider figure figcaption {
 		<figure>
 			<img>
 			<figcaption></figcaption>
-		</figure>
-		<figure>
-			<imgt>
-			<figcaption></figcaption>
-		</figure>
-		<figure>
-			<img>
-			<figcaption></figcaption>
-		</figure>
+		</figure> -->
 	</figure>
 </div>
 </body>

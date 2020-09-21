@@ -14,7 +14,7 @@
     font-kerning: auto;
 }
 /*@import url(https://fonts.googleapis.com/css?family=Istok+Web);*/
-/*@keyframes slidy {
+@keyframes slidy {
 0% { left: 0%; }
 20% { left: 0%; }
 25% { left: -100%; }
@@ -24,7 +24,7 @@
 75% { left: -300%; }
 95% { left: -300%; }
 100% { left: -400%; }
-}*/
+}
 * {
   box-sizing: border-box;
 }
@@ -41,6 +41,7 @@ figure.slider {
   position: relative; 
   width: 500%;
   font-size: 0; 
+  height: 500px;
   animation: 12s slidy infinite; 
 }
 figure.slider figure { 
@@ -70,13 +71,60 @@ figure.slider figure figcaption {
 }
 
 .card_header{
+	position: absolute;
 	font-size: 30px;
 	font-family: MyWebFont;
-	height: 500px;
-	  font-size: 5em; 
+	height: 100px;
+	top: 30%;
+	left: 38.5%;
+	 transform: translate(-38.5%, -30%);
  color:black;
   padding:0;
   letter-spacing: 0.05em;
+}
+.card_text{
+	position: absolute;
+	font-size: 30px;
+	font-family: MyWebFont;
+	height: 100px;
+	top: 50%;
+	left: 40%;
+	 transform: translate(-50%, -50%);
+ color:#4b4b4b;
+  padding:0;
+}
+.card_review{
+		position: absolute;
+	font-size: 30px;
+	font-family: MyWebFont;
+	height: 100px;
+	top: 70%;
+	left: 38%;
+	 transform: translate(-38%, -70%);
+ color:#4b4b4b;
+  padding:0;
+}
+.star{
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	background-image: url(star.png);
+	background-size: cover;
+	margin-right:15px;
+}
+.star1{
+	/*margin-left: 50px;*/
+}
+.card_link	{
+	position: absolute;
+	font-size: 25px;
+	font-family: MyWebFont;
+	height: 100px;
+	top: 95%;
+	left: 40%;
+	 transform: translate(-50%, -95%);
+ color:#55acd1;
+  padding:0;
 }
 
 	</style>
@@ -85,18 +133,22 @@ figure.slider figure figcaption {
 <base href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/">
 <div id="captioned-gallery">
 	<figure class="slider">
-		<figure>
+		<figure >
+			<img>
 			<div class="card_header">Cheese Taco</div>
-			<div class="card_text">Cheese Taco</div>
-			<div class="card_review">5.0</div>
+			<div class="card_text">1 Hour &nbsp;&nbsp;&nbsp; Calories: 159</div>
+			<div class="card_review">5.0 
+				<div class="star star1"></div>
+				<div class="star"></div>
+				<div class="star"></div>
+				<div class="star"></div>
+				<div class="star"></div>
+
+			</div>
 			<div class="card_link">Take Me To The Recipe!</div>
 			<div class="card_image"></div>
 			<figcaption></figcaption>
 		</figure>
-		<!-- <figure>
-			<img>
-			<figcaption></figcaption>
-		</figure>
 		<figure>
 			<img>
 			<figcaption></figcaption>
@@ -108,7 +160,11 @@ figure.slider figure figcaption {
 		<figure>
 			<img>
 			<figcaption></figcaption>
-		</figure> -->
+		</figure>
+		<figure>
+			<img>
+			<figcaption></figcaption>
+		</figure>
 	</figure>
 </div>
 </body>

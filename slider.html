@@ -56,14 +56,15 @@ figure.slider img {
 	position: relative;
 	display: block;
 	margin:0 auto;
-	background-color: red;
+	background-color: transparent;
+	visibility: hidden;
 	 }
 figure.slider figure figcaption { 
   position: absolute; 
   bottom: 0;
   left:50%;
   transform: translate(-50%, 0);
-  background: rgba(0,0,0,0.4);
+  background:transparent;
   color: #fff; 
   width: 300px;
   font-size: 2rem;
@@ -127,13 +128,26 @@ figure.slider figure figcaption {
   padding:0;
 }
 
+.card_image{
+	background-image: url(taco1.png);
+	background-size: cover;
+	width: 575px;
+	height: 487px;
+	margin:0;
+	padding: 0;
+	position: absolute;
+	left:70%;
+	transform: translate(-65%,0 );
+}
+
 	</style>
 </head>
 <body>
 <base href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/">
 <div id="captioned-gallery">
 	<figure class="slider">
-		<figure >
+		
+		<figure ><div class="card_image"></div>
 			<img>
 			<div class="card_header">Cheese Taco</div>
 			<div class="card_text">1 Hour &nbsp;&nbsp;&nbsp; Calories: 159</div>
@@ -146,7 +160,7 @@ figure.slider figure figcaption {
 
 			</div>
 			<div class="card_link">Take Me To The Recipe!</div>
-			<div class="card_image"></div>
+			
 			<figcaption></figcaption>
 		</figure>
 		<figure>

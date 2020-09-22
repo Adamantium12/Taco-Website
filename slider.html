@@ -133,15 +133,22 @@ figure.slider figure figcaption {
  color:#55acd1;
 }
 .card_image{
-	background-image: url(taco1.png);
 	background-size: cover;
-	width: 575px;
-	height: 487px;
 	margin:0;
 	padding: 0;
 	position: absolute;
 	left:70%;
 	transform: translate(-65%,0 );
+}
+.card_image_1{
+	background-image: url(taco1.png);
+	width: 575px;
+	height: 487px;
+}
+.card_image_2{
+	background-image: url(taco1.png);
+	width: 575px;
+	height: 487px;
 }
 
 	</style>
@@ -151,7 +158,8 @@ figure.slider figure figcaption {
 <div id="captioned-gallery">
 	<figure class="slider">
 		
-		<figure ><div class="card_image"></div>
+		<figure >
+			<div class="card_image card_image_1"></div>
 			<img>
 			<div class="card_header">Cheese Taco</div>
 			<div class="card_text">1 Hour &nbsp;&nbsp;&nbsp; Calories: 159</div>

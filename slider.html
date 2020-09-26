@@ -42,7 +42,7 @@ figure.slider {
   width: 500%;
   font-size: 0; 
   height: 500px;
-  animation: 12s slidy infinite; 
+  animation: 1200s slidy infinite; 
 }
 figure.slider figure { 
   width: 20%; 
@@ -72,6 +72,7 @@ figure.slider figure figcaption {
 }
 
 .card_header{
+		text-align: center;
 	position: absolute;
 	font-size: 30px;
 	font-family: MyWebFont;
@@ -81,26 +82,30 @@ figure.slider figure figcaption {
 	 transform: translate(-58.5%, -30%);
  color:black;
   padding:0;
+  width:200px;
   letter-spacing: 0.05em;
 }
 .card_text{
+		text-align: center;
 	position: absolute;
 	font-size: 30px;
 	font-family: MyWebFont;
 	height: 100px;
 	top: 50%;
-	left: 60%;
+	left: 60%;width: 300px;
 	 transform: translate(-60%, -50%);
  color:#4b4b4b;
   padding:0;
 }
 .card_review{
+		text-align: center;
 		position: absolute;
 	font-size: 30px;
 	font-family: MyWebFont;
-	height: 100px;
-	top: 70%;
-	left: 58%;
+	height: 50px;
+	top: 60%;
+	left: 60%;
+	width: 300px;
 	 transform: translate(-58%, -70%);
  color:#4b4b4b;
   padding:0;
@@ -122,12 +127,14 @@ figure.slider figure figcaption {
 	margin-right:15px;
 }
 .card_link	{
+	text-align: center;
 	position: absolute;
 	font-size: 25px;
 	font-family: MyWebFont;
-	height: 100px;
-	top: 95%;
-	left: 60%;
+	height: 50px;
+	width:260px;
+	top: 75%;
+	left: 65%;
 	 transform: translate(-70%, -95%);
  color:#55acd1;
   padding:0;
@@ -162,6 +169,44 @@ figure.slider figure figcaption {
 	height: 500px;
 	z-index: 5;
 }
+.card_image_container{
+	position: relative;
+	float:right;
+	width:50vw;
+	height: 500px;
+	z-index: 5;
+}
+.img_inner{
+	position: relative;
+	float:left;
+	display: block;
+	margin:0;
+	margin-left: 100px;
+	width:300px;
+	height: 500px;
+}
+.inner{
+	position: relative;
+	float:right;
+	display: block;
+	margin:0;
+	margin-right: 100px;
+	width:300px;
+	height: 500px;
+}
+@media (max-width: 800px){
+	.card_image_container{
+		width:100vw;
+		display:block;
+		float: left;
+	}
+	.card_text_container{
+		margin-top: 500px;
+		width:100vw;
+		display:block;
+		float: right;
+	}
+}
 
 
 	</style>
@@ -173,10 +218,13 @@ figure.slider figure figcaption {
 		
 		<figure >
 			<div class="card_image_container">
+				<div class="img_inner">
 			<div class="card_image card_image_1"></div>
+			</div>
 			</div>
 			<img>
 			<div class="card_text_container">
+				<div class="inner">
 			<div class="card_header">Cheese Taco</div>
 			<div class="card_text">1 Hour &nbsp;&nbsp;&nbsp; Calories: 159</div>
 			<div class="card_review">5.0 
@@ -190,6 +238,7 @@ figure.slider figure figcaption {
 
 			</div>
 			<div class="card_link"><a href="">Take Me To The Recipe!</a></div>
+			</div>
 			</div>
 			<figcaption></figcaption>
 		</figure>

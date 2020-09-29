@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title></title>
+	<meta content="width=device-width, initial-scale=1" name="viewport" />
 	<style type="text/css">
 	@font-face {
   font-family: 'MyWebFont';
@@ -16,14 +17,16 @@
 /*@import url(https://fonts.googleapis.com/css?family=Istok+Web);*/
 @keyframes slidy {
 0% { left: 0%; }
-20% { left: 0%; }
+/*20% { left: 0%; }
 25% { left: -100%; }
 45% { left: -100%; }
 50% { left: -200%; }
 70% { left: -200%; }
 75% { left: -300%; }
-95% { left: -300%; }
-100% { left: -400%; }
+95% { left: -300%; }*/
+33% { left: 0%; }
+66% { left: -100%; }
+100% { left: -100%; }
 }
 * {
   box-sizing: border-box;
@@ -42,7 +45,7 @@ figure.slider {
   width: 500%;
   font-size: 0; 
   height: 500px;
-  animation: 1200s slidy infinite; 
+  animation: 12s slidy infinite; 
 }
 figure.slider figure { 
   width: 20%; 
@@ -194,18 +197,78 @@ figure.slider figure figcaption {
 	width:300px;
 	height: 500px;
 }
-@media (max-width: 800px){
+@media (max-width: 1000px){
+	.inner{
+		float:none;
+		margin:0 auto;
+	}
+	.img_inner{
+		float:none;
+		margin:0 auto;
+	}
 	.card_image_container{
-		width:100vw;
-		display:block;
-		float: left;
+	width: 100vw;
+float:none;
 	}
 	.card_text_container{
-		margin-top: 500px;
-		width:100vw;
-		display:block;
-		float: right;
+
+		width: 100vw;
+		float:none;
+	
 	}
+
+figure.slider { 
+	height: 100vh;
+}
+}
+@media (max-width: 550px){
+	.card_header, .card_text, .card_review, .card_link{
+		font-size:22px;
+	}
+	.card_link{
+		top:80%;
+		left:85%;
+		transform: translate(-90%, -80%);
+	}
+	.card_review{
+		height: 40px;
+	}
+	.inner{
+	
+		height: 50vh;
+		float:none;
+		margin:0 auto;
+	}
+	.img_inner{
+		height: 50vh;
+		position: relative;
+		float:none;
+		margin:0;
+		width: 100vw;
+	}
+	.card_image_1, .card_image_2{
+		width: 100%;
+		left:50%;
+		height: 100%;
+		background-size: contain;
+		background-repeat: no-repeat;
+		transform: translate(-50%, 0);
+	}
+	.card_image_container{
+	width: 100vw;
+float:none;
+height: 50vh;
+	}
+	.card_text_container{
+height: 50vh;
+		width: 100vw;
+		float:none;
+	
+	}
+
+figure.slider { 
+	height: 100vh;
+}
 }
 
 
@@ -245,10 +308,13 @@ figure.slider figure figcaption {
 			
 		<figure>
 			<div class="card_image_container">
+				<div class="img_inner">
 			<div class="card_image card_image_2"></div>
+		</div>
 			</div>
 			<img>
 			<div class="card_text_container">
+					<div class="inner">
 			<div class="card_header">California Taco</div>
 			<div class="card_text">1.5 Hour &nbsp;&nbsp;&nbsp; Calories: 182</div>
 			<div class="card_review">4.0 
@@ -263,16 +329,17 @@ figure.slider figure figcaption {
 			</div>
 			<div class="card_link"><a href="">Take Me To The Recipe!</a></div>
 			</div>
+		</div>
 			<figcaption></figcaption>
 		</figure>
-		<figure>
+		<!-- <figure>
 			<img>
 			<figcaption></figcaption>
 		</figure>
 		<figure>
 			<img>
 			<figcaption></figcaption>
-		</figure>
+		</figure> -->
 	</figure>
 </div>
 </body>

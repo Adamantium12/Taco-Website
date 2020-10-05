@@ -26,6 +26,7 @@ html, body{
     overflow-x: hidden;
     overflow-y: auto;
 
+
   }
 
   .parallax__layer {
@@ -41,12 +42,14 @@ html, body{
     -webkit-transform: translateZ(0);
     transform: translateZ(0);
     height:1500px;
+
   }
 
   .parallax__layer--back {
     -webkit-transform: translateZ(-1px);
     transform: translateZ(-1px);
     width:100vw;
+
 
   }
 
@@ -107,7 +110,11 @@ html, body{
     /*transform: translate(-50%, 0);*/
   }
 @media (max-width: 800px) {
-  .box {
+
+.parallax__layer--back{
+     margin-top: 800px;
+}
+.box {
     width:600px;
     height:284px;
      background-size:600px 284px;
@@ -452,7 +459,7 @@ z-index: 999;
   $(window).on('load resize scroll', function() {
      var windowWidth = $(window).width();
   
-      // $('.title')[0].style.width = windowWidth+"px";
+      $('.title')[0].style.width = windowWidth+"px";
     console.log("dsgydg");
 
   });

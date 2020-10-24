@@ -18,9 +18,11 @@
 70% { left: -200%; }
 75% { left: -300%; }
 95% { left: -300%; }*/
-33% { left: 0%; }
-66% { left: -100%; }
-100% { left: -100%; }
+20% { left: 0%; }
+40% { left: -100%; }
+60% { left: -100%; }
+80% { left: -200%; }
+100% { left: -200%; }
 }
 * {
   box-sizing: border-box;
@@ -45,7 +47,7 @@ figure.slider {
   width: 500%;
   font-size: 0; 
   height: 500px;
-  animation: 12s slidy infinite; 
+  animation: 18s slidy infinite; 
 }
 figure.slider figure { 
   width: 20%; 
@@ -154,6 +156,11 @@ figure.slider figure figcaption {
 	width: 512px;
 	height: 494px;
 }
+.card_image_3{
+	background-image: url(taco3.png);
+	width: 512px;
+	height: 494px;
+}
 .card_text_container{
 	position: relative;
 	/*float:left;*/
@@ -243,7 +250,7 @@ bottom:-50%;
 		margin:0;
 		width: 100vw;
 	}
-	.card_image_1, .card_image_2{
+	.card_image_1, .card_image_2, .card_image_3{
 		width: 100%;
 		left:50%;
 		height: 100%;

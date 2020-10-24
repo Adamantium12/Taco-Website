@@ -1,8 +1,8 @@
 	@font-face {
   font-family: 'MyWebFont';
-  src: url('boston.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  src: url('Fonts/boston.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
       
-       url('boston.ttf') format('truetype'); /* Safari, Android, iOS */
+       url('Fonts/boston.ttf') format('truetype'); /* Safari, Android, iOS */
     font-weight: normal;
     font-style: normal; 
     -webkit-font-smoothing: antialiased;
@@ -108,7 +108,7 @@ figure.slider figure figcaption {
 	display: inline-block;
 	width: 30px;
 	height: 30px;
-	background-image: url(star.png);
+	background-image: url(Images/star.png);
 	background-size: cover;
 	margin-right:15px;
 }
@@ -116,7 +116,7 @@ figure.slider figure figcaption {
 	display: inline-block;
 	width: 30px;
 	height: 30px;
-	background-image: url(star2.png);
+	background-image: url(Images/star2.png);
 	background-size: cover;
 	margin-right:15px;
 }
@@ -147,17 +147,17 @@ figure.slider figure figcaption {
 	transform: translate(-65%,0 );
 }
 .card_image_1{
-	background-image: url(taco1.png);
+	background-image: url(Images/taco1.png);
 	width: 575px;
 	height: 487px;
 }
 .card_image_2{
-	background-image: url(taco2.png);
+	background-image: url(Images/taco2.png);
 	width: 512px;
 	height: 494px;
 }
 .card_image_3{
-	background-image: url(taco3.png);
+	background-image: url(Images/taco3.png);
 	width: 512px;
 	height: 494px;
 }

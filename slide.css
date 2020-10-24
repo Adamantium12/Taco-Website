@@ -205,7 +205,10 @@ float:none;
 		float:none;
 	
 	}
+div#captioned-gallery { 
+bottom:-60%;
 
+	}
 figure.slider { 
 	height: 100vh;
 }

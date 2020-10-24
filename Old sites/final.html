@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta name = "viewport" content = "user-scalable=no, width=device-width">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<style type="text/css">
+@font-face {
+  font-family: 'MyWebFont';
+  src: url('boston.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('boston.woff') format('woff'), /* Modern Browsers */
+       url('boston.ttf') format('truetype'); /* Safari, Android, iOS */
+    font-weight: normal;
+    font-style: normal; 
+    -webkit-font-smoothing: antialiased;
+    font-kerning: auto;
+}
+* {
+	box-sizing: border-box;
+}
+body {
+	font-family: 'Montserrat', sans-serif;
+	line-height: 1.6;
+	margin: 0;
+	min-height: 100vh;
+}
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+
+h2,
+h3,
+a {
+	color: #34495e;
+}
+
+a {
+	text-decoration: none;
+}
+
+
+
+.logo {
+	background-size: cover;
+	width:99px;
+	height: 53.5px;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-image: url('logo-0.png');
+	margin: 5px 3vw;
+	font-size: 1.45em;
+}
+
+.main-nav {
+	display: none;
+	margin-top: 5px;
+
+}
+.logo a,
+.main-nav a {
+	padding: 10px 15px;
+	text-transform: uppercase;
+	text-align: center;
+	display: block;
+}
+
+.main-nav a {
+	color: #34495e;
+	font-size: .99em;
+}
+
+/*.main-nav a:hover {
+	color: #718daa;
+}*/
+
+
+
+.header {
+	transition: 1.4s;
+/*	height: 65px;*/
+	position: fixed;
+	width:100vw;
+	top:0;
+	/*padding-top: .5em;
+	padding-bottom: .5em;*/
+/*	border: 1px solid #a2a2a2;*/
+	background-color: #ffffff;
+	-webkit-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);
+	box-shadow: 0px 0px 26px 0px rgba(0,0,0,0.3);
+
+}
+
+
+/* ================================= 
+  Media Queries
+==================================== */
+
+
+.main-nav li:hover{
+		background-color: #f4f4f4;
+	}
+
+@media (min-width: 797px) {
+	.header,
+	.main-nav {
+		transition: 1.4s;
+		padding:0;
+		display: flex;
+	}
+	.header {
+		flex-direction: column;
+		align-items: center;
+    	
+	}
+	.main-nav{
+		margin:0;
+		height: 50px;
+	}
+	.main-nav a{
+		padding: 0;
+		font-size: 15px;
+		padding: 13px 17px;
+	}
+
+}
+
+@media (min-width: 1025px) {
+	.header {
+		height: 65px;
+		padding: 0;
+		flex-direction: row;
+		justify-content: space-between;
+	}
+	.main-nav li:not(.first_li){
+			border-left: 1px solid #e8e8e8;
+			
+
+	}
+	.main-nav li{/*
+		width:100px;*/
+		height:100%;
+
+	}
+	.main-nav li:hover{
+		background-color: #f4f4f4;
+	}
+	.last_li{
+		margin-right: 5px;
+	}
+	.main-nav{
+		margin-top: 0;
+		height: 100%;
+	}
+	.main-nav a{
+		padding: 0;
+		font-size: 15px;
+		padding: 20.5px 25px;
+	}
+}
+.addHeight{
+	height: 250px;
+	transition: 1.4s;
+}
+
+.baseHeight{
+	height: 65px;
+}
+.icon {
+  position: absolute;
+  right: 5vw;
+  top: 12.25px;
+} .menu-wrapper {
+	/* position: absolute;
+	 top: 0;
+	 left: 0;
+	 right: 0;
+	 bottom: 0;
+	 margin: auto;
+	 width: 100px;
+	 height: 60px;
+	 cursor: pointer;*/
+		 width: 30px;
+	 height: 35px;
+}
+ .hamburger-menu, .hamburger-menu:after, .hamburger-menu:before {
+	 width: 30px;
+	 height: 3px;
+}
+ .hamburger-menu {
+	 position: relative;
+	 transform: translateY(12px);
+	 background: rgba(0, 0, 0, 1);
+	 transition: all 0ms 300ms;
+}
+ .hamburger-menu.animate {
+	 background: rgba(0, 0, 0, 0);
+}
+ .hamburger-menu:before {
+	 content: "";
+	 position: absolute;
+	 left: 0;
+	 bottom: 7.5px;
+	 background: rgba(0, 0, 0, 1);
+	 transition: bottom 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+ .hamburger-menu:after {
+	 content: "";
+	 position: absolute;
+	 left: 0;
+	 top: 7.5px;
+	 background: rgba(0, 0, 0, 1);
+	 transition: top 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+ .hamburger-menu.animate:after {
+	 top: 0;
+	 transform: rotate(45deg);
+	 transition: top 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+ .hamburger-menu.animate:before {
+	 bottom: 0;
+	 transform: rotate(-45deg);
+	 transition: bottom 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+.title{
+	font-family: MyWebFont;
+	text-align: center;
+	font-size: 5em; 
+	margin-top: 500px;
+	padding:0;
+	letter-spacing: 0.05em;
+	 -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    text-shadow:1px 1px 1px rgba(0,0,0,0.004) !important;}
+}
+	
+	</style>
+</head>
+<body>
+	
+	<header class="header">
+		<a href="#"><div class="logo"></div></a>
+
+		<a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    		<div class="menu-wrapper">
+  <div class="hamburger-menu"></div>	  
+</div>
+  		</a> 
+      <ul class="main-nav">
+          <li class="first_li"><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Recipes</a></li>
+          <li class="last_li"><a href="#">Contact</a></li>
+      </ul>
+	</header> 
+	<div style="height:2000px;">
+		<h1 class="title">This is a header</h1>
+
+	</div>
+	<img src="MicrosoftSansSerif.svg" style="color:black;">
+</body>
+</html>
+<script type="text/javascript">
+	(function () {
+	$('.menu-wrapper').on('click', function() {
+		$('.hamburger-menu').toggleClass('animate');
+	})
+})();
+	var open = false;
+//Function called from hamburger press
+function myFunction() {
+	//Get Navigation element
+  var x = $('.main-nav')[0];
+  //Do the opposite of the current state of the element
+  if (x.style.display === "block") {
+  	open = false;
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+    open = true;
+  }
+}
+
+//On window resize/scroll
+$(window).on('load resize', function() {
+	//Check if the window is small enough for mobile
+    var windowWidth = $(window).width();
+    if (windowWidth < 780) {
+    	//Show hamburger icon
+    	$('.icon')[0].style.display = "block";
+    	//check if hamburger is open or not
+    	if (open == false) {
+    		//Change dropdown
+ 			$('.main-nav')[0].style.display = "none";   
+    	}else{
+    		//Change dropdown
+    		$('.main-nav')[0].style.display = "block"; 
+    	}    	 	
+    } else{
+    	//If the window is bigger than mobile mode it show the links  
+        $('.main-nav a').fadeIn();
+        //Change dropdown to reconfigure
+        $('.main-nav')[0].style.display = "flex";
+        //Hide hamburger icon
+        $('.icon')[0].style.display = "none";
+    }
+
+});
+</script>

@@ -19,7 +19,9 @@ html, body{
   margin: 0;
   height:auto!important;
 
- }
+ }.icon {
+  display: none;
+}
 body{
 /*  background-image: url(Images/logo.png);
   background-size: 250px;*/
@@ -475,7 +477,7 @@ box-shadow: inset 0px 0px 30px -3px rgba(0,0,0,0.75);
 </head>
 <body style="overflow-x: hidden;">
     <header class="header">
-    <a href="index.html"><div class="logo"></div></a>
+  <div class="logo"></div>
 
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
         <div class="menu-wrapper">
@@ -553,7 +555,9 @@ box-shadow: inset 0px 0px 30px -3px rgba(0,0,0,0.75);
   <script src="jquery-3.3.1.min.js"></script>    
 <script type="text/javascript">
   
-
+ $(".logo").on('click', function() {
+    window.location = "index.html";
+   });
  
  
   (function () {

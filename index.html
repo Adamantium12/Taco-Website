@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="viewport" content="height=device-height, 
+<!-- <meta name="viewport" content="height=device-height, 
                       width=device-width, initial-scale=1.0, 
                       minimum-scale=1.0, maximum-scale=1.0, 
                       user-scalable=no, target-densitydpi=device-dpi"><meta name="viewport" content="width=device-width, initial-scale=1.0"> <meta http-equiv=”Content-Type” content=”text/html; charset=utf-8“>
   <meta name=”viewport” content=”width=device-width“>
   <meta name=”viewport” content=”width=device-width, initial-scale=0.5, user-scalable=no“>
-  <meta name=”viewport” content=”width=device-width, initial-scale=0.5, user-scalable=no“>
+  <meta name=”viewport” content=”width=device-width, initial-scale=0.5, user-scalable=no“> -->
   <link rel="stylesheet" type="text/css" href="slide.css">
+
  <meta content="width=device-width, initial-scale=1" name="viewport" />
+ <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <title>Home</title>
   <style>
 html, body{ 
    
-    box-sizing: border-box;
+
 
     padding:0;
  max-width: 100vw;
@@ -26,7 +28,10 @@ html, body{
   height:auto!important;
 
  }
-
+*{  box-sizing: border-box;}
+.icon {
+  display: none;
+}
   .parallax {
     width:100vw;
     height: 100vh;
@@ -35,6 +40,16 @@ html, body{
 
 
   }
+  html, body {
+    left:0;
+    top:0;
+    width: 100vw;
+    overflow-x: hidden;
+}
+html, body {
+  overflow-x: hidden;
+}
+
 .logo_large{
   background-image: url(Images/logo-0.png);
   background-size: cover;
@@ -516,6 +531,7 @@ a {
   font-size: 1.45em;
 }
 
+
 .main-nav {
   display: none;
   margin-top: 5px;
@@ -694,7 +710,7 @@ z-index: 999;
 </head>
 <body style="overflow-x: hidden;">
     <header class="header">
-    <a href="index.html"><div class="logo"></div></a>
+  <div class="logo"></div>
 
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
         <div class="menu-wrapper">
@@ -807,7 +823,7 @@ best tacos around </div></div>
       <figcaption></figcaption>
     </figure> -->
   </figure>
-  <div class="footer"><span>This is a footer</span></div>
+  <div class="footer"><span>This is a footer. Links, terms and conditions and other <br>copyright information goes here</span></div>
 </div></div>
 
     </div>
@@ -842,7 +858,9 @@ best tacos around </div></div>
   <script src="jquery-3.3.1.min.js"></script>    
  
 <script type="text/javascript">
-  
+   $(".logo").on('click', function() {
+    window.location = "index.html";
+   });
   $(window).on('load resize scroll', function() {
      var windowWidth = $(window).innerWidth();
   console.log(windowWidth);

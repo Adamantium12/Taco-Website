@@ -114,7 +114,8 @@ a {
   background-image: url('Images/logo-0.png');
   margin: 5px 3vw;
   font-size: 1.45em;
-}
+  cursor: pointer;
+  }
 
 .main-nav {
   display: none;

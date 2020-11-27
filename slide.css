@@ -196,18 +196,31 @@ figure.slider figure figcaption {
 .footer{
 	color:white;
   background-color: black;
-  height: 250px;
+  height: 600px;
   width: 100vw;
   margin-top: 200px;
   position: relative;
   bottom:0;
 }
 .footer span{
-	position: absolute;
+	position: relative;
 display: block;
 text-align: center;
-width: 100vw;
+width: 70%;
 top: 50px;
+margin-bottom: 20px;
+left:50%;
+transform: translate(-50%, 0);
+}
+.footer .links{
+	margin: 0 auto;
+	width: 100px;
+	height: 480px;
+	font-size: 16px;
+}
+.footer span a{
+	display: block;
+	float:left;
 }
 @media (max-width: 1000px){
 	.inner{

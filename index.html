@@ -1,199 +1,252 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-	<title></title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	<style type="text/css">
-		
-* {
-	box-sizing: border-box;
-}
-body {
-	font-family: 'Montserrat', sans-serif;
-	line-height: 1.6;
-	margin: 0;
-	min-height: 100vh;
-}
-ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-
-h2,
-h3,
-a {
-	color: #34495e;
-}
-
-a {
-	text-decoration: none;
-}
-
-
-
-.logo {
-	margin: 0;
-	font-size: 1.45em;
-}
-
-.main-nav {
-	margin-top: 5px;
-
-}
-.logo a,
-.main-nav a {
-	padding: 10px 15px;
-	text-transform: uppercase;
-	text-align: center;
-	display: block;
-}
-
-.main-nav a {
-	color: #34495e;
-	font-size: .99em;
-}
-
-/*.main-nav a:hover {
-	color: #718daa;
-}*/
-
-
-
-.header {
-	transition: 1.4s;
-/*	height: 65px;*/
-	position: fixed;
-	width:100vw;
-	/*padding-top: .5em;
-	padding-bottom: .5em;*/
-/*	border: 1px solid #a2a2a2;*/
-	background-color: #ffffff;
-	-webkit-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);
-	-moz-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);
-	box-shadow: 0px 0px 26px 0px rgba(0,0,0,0.3);
-
-}
-
-
-/* ================================= 
-  Media Queries
-==================================== */
-
-
-.main-nav li:hover{
-		background-color: #f4f4f4;
-	}
-
-@media (min-width: 769px) {
-	.header,
-	.main-nav {
-		transition: 1.4s;
-		padding:0;
-		display: flex;
-	}
-	.header {
-		flex-direction: column;
-		align-items: center;
-    	
-	}
-	.main-nav{
-		margin:0;
-		height: 50px;
-	}
-	.main-nav a{
-		padding: 0;
-		font-size: 15px;
-		padding: 13px 17px;
-	}
-
-}
-
-@media (min-width: 1025px) {
-	.header {
-		height: 65px;
-		padding: 0;
-		flex-direction: row;
-		justify-content: space-between;
-	}
-	.main-nav li:not(.first_li){
-			border-left: 1px solid #e8e8e8;
-			
-
-	}
-	.main-nav li{/*
-		width:100px;*/
-		height:100%;
-
-	}
-	.main-nav li:hover{
-		background-color: #f4f4f4;
-	}
-	.last_li{
-		margin-right: 5px;
-	}
-	.main-nav{
-		margin-top: 0;
-		height: 100%;
-	}
-	.main-nav a{
-		padding: 0;
-		font-size: 15px;
-		padding: 20.5px 25px;
-	}
-}
-.addHeight{
-	height: 250px;
-	transition: 1.4s;
-}
-
-.baseHeight{
-	height: 65px;
-}
-
-	</style>
+    <!-- Set Device Viewport for Media Queries -->
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Taco King</title>
+    <!-- CSS Links -->
+    <link rel="stylesheet" type="text/css" href="slide.css" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
-<body>
-	<header class="header">
-		<h1 class="logo"><a href="#">Flexbox</a></h1>
+
+<!-- Body -->
+  <body style="overflow-x: hidden;">
+    <header class="header">
+      <div class="logo"></div>
+
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <div class="menu-wrapper">
+          <div class="hamburger-menu"></div>
+        </div>
+      </a>
       <ul class="main-nav">
-          <li class="first_li"><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Recipes</a></li>
-          <li class="last_li"><a href="#">Contact</a></li>
+        <li class="first_li"><a href="about.html">About</a></li>
+        <li><a href="recipe.html">Recipes</a></li>
+        <li class="last_li"><a href="mailto:17021ab@kuranuicollege.school.nz" target="_blank" >Contact</a></li>
       </ul>
-	</header> 
-	<div style="height:2000px;"></div>
-</body>
-</html>
-<script type="text/javascript">
-//On window resize/scroll
-$(window).on('scroll resize ', function() {
-	//Check if the window is small enough for mobile
-    var windowWidth = $(window).width();
-    if (windowWidth < 770) {
-    	//Get scroll position
-        var scrollTop = $(window).scrollTop();
-        if (scrollTop > 50) {
-        	//Shrink header to smaller hieght and fade Out the links
-            $('.header').removeClass('addHeight');
-            $('.header').addClass('baseHeight');
-            $('.main-nav a').fadeOut();
-        } else {
-        	//Expand the header to bigger hieght and fade in the links
-            $('.header').addClass('addHeight');
-            $('.header').removeClass('baseHeight');
-            $('.main-nav a').fadeIn();
+    </header>
+    <div class="parallax">
+      <div class="taco_row_text_container">
+        <div class="logo_large"></div>
+        <div class="taco_row_text">
+          The freshest and <br />
+          best tacos around
+        </div>
+      </div>
+      <div class="taco_row_image_container">
+        <div class="taco_row"></div>
+      </div>
+      <div class="parallax__layer parallax__layer--back">
+        <div class="title">
+          <div id="captioned-gallery">
+            <figure class="slider">
+              <figure>
+                <div class="card_image_container">
+                  <div class="img_inner">
+                    <div class="card_image card_image_1"></div>
+                  </div>
+                </div>
+                <img />
+                <div class="card_text_container">
+                  <div class="inner">
+                    <div class="card_header">Cheese Taco</div>
 
+                    <div class="card_review">
+                      5.0
+
+                      <div class="star"></div>
+                      <div class="star"></div>
+                      <div class="star"></div>
+                      <div class="star"></div>
+                      <div class="star"></div>
+                    </div>
+                    <div class="card_link"><a href="recipe.html">Take Me To The Recipe!</a></div>
+                  </div>
+                </div>
+                <figcaption></figcaption>
+              </figure>
+
+              <figure>
+                <div class="card_image_container">
+                  <div class="img_inner">
+                    <div class="card_image card_image_2"></div>
+                  </div>
+                </div>
+                <img />
+                <div class="card_text_container">
+                  <div class="inner">
+                    <div class="card_header">California Taco</div>
+
+                    <div class="card_review">
+                      4.0
+
+                      <div class="star"></div>
+                      <div class="star"></div>
+                      <div class="star"></div>
+                      <div class="star"></div>
+                      <div class="star1"></div>
+                    </div>
+                    <div class="card_link"><a href="recipe.html">Take Me To The Recipe!</a></div>
+                  </div>
+                </div>
+                <figcaption></figcaption>
+              </figure>
+              <figure>
+                <div class="card_image_container">
+                  <div class="img_inner">
+                    <div class="card_image card_image_3"></div>
+                  </div>
+                </div>
+                <img />
+                <div class="card_text_container">
+                  <div class="inner">
+                    <div class="card_header">Chicken Taco</div>
+
+                    <div class="card_review">
+                      4.0
+
+                      <div class="star"></div>
+                      <div class="star"></div>
+                      <div class="star"></div>
+                      <div class="star"></div>
+                      <div class="star1"></div>
+                    </div>
+                    <div class="card_link"><a href="recipe.html">Take Me To The Recipe!</a></div>
+                  </div>
+                </div>
+                <figcaption></figcaption>
+              </figure>
+            </figure>
+            <div class="footer">
+              <span>
+                This is a footer. Links, terms and conditions and other <br />
+                copyright information goes here
+                <div class="links">
+                <a href="https://www.pngitem.com/so/banner-clip-art/6/">Banner Image</a>
+                <a href="https://www.pngitem.com/middle/Tmwbhb_download-burrito-transparent-background-del-taco-cali-steak/">Burrito Image</a>
+                <a href="https://www.stickpng.com/img/clothes/hats/chef-hat">Chef Hat Image</a>
+                <a href="https://www.jing.fm/iclip/mmhxhw_tacos-graphic-soft-taco/">Taco Icon Image</a>
+                <a href="https://en.wikipedia.org/wiki/Cast-iron_cookware">Pan Image</a>
+                <a href="https://all-free-download.com/free-photos/download/old_paper_background_hd_picture_3_169573.html">Paper Image</a>
+                <a href="https://www.jing.fm/iclip/ibhiJx_simple-star-clip-art-transparent-background-star-png/">Star Image</a>
+                <a href="https://www.pngaaa.com/detail/145537">Tacos In a Row Image</a>
+                <a href="https://www.vippng.com/preview/JwbbxR_png-freeuse-library-taco-alchetron-the-free-social/">Taco 1 Image</a>
+                <a href="https://pngio.com/images/png-a679867.html">Taco 2 Image</a>
+                <a href="https://trailsleadhome.com/wp-content/uploads/2018/05/chicken-buff-768x432.jpg">Taco 3 Image</a>
+                <a href="https://pngio.com/PNG/a86580-salad-vector-png.html">Salad Image</a>
+</div>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="parallax__layer parallax__layer--base">
+        <div class="box_parent">
+          <div class="box3">
+            <div class="box_3_text_container">
+              <div class="box_3_header">
+                Made from all <br />
+                Organic produce
+              </div>
+              <div class="box_3_text">Only sourced from local suppliers <a href="recipe.html"><button class="btn">View Recipes</button></a></div>
+            </div>
+          </div>
+          <div class="box">
+            <div class="box2"></div>
+          </div>
+        </div>
+        <div class="box_parent2">
+          <div class="box4">
+            <div class="box_4_text_container">
+              <div class="box_4_header">Real Authentic Cuisine</div>
+              <div class="box_4_text">
+                We worked with dozens of chefs to <br />
+                produce real food<a href="recipe.html"><button class="btn">View Recipes</button></a>
+              </div>
+            </div>
+          </div>
+          <div class="box5"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="jquery-3.3.1.min.js"></script>
+
+    <script type="text/javascript">
+      $(".logo").on("click", function () {
+        window.location = "index.html";
+      });
+      $(window).on("load resize scroll", function () {
+        var windowWidth = $(window).innerWidth();
+        console.log(windowWidth);
+        $(".title")[0].style.width = windowWidth;
+        console.log("dsgydg");
+      });
+      // Parallax function
+      $(document).ready(function () {
+        $(window).scroll(function (e) {
+          parallaxScroll();
+        });
+
+        function parallaxScroll() {
+          var scrolled = $(window).scrollTop();
+          $(".parallax__layer--base").css("top", 0 - scrolled * 0.55 + "px");
         }
-    } else {
-    	//If the window is bigger than mobile mode show the links and reset the height so that the media querys have priority
-        $('.header').removeClass('baseHeight');
-        $('.header').removeClass('addHeight');
-        $('.main-nav a').fadeIn();
-    }
+      });
+      (function () {
+        $(".menu-wrapper").on("click", function () {
+          $(".hamburger-menu").toggleClass("animate");
+        });
+      })();
+      var open = false;
+      //Function called from hamburger press
+      function myFunction() {
+        //Get Navigation element
+        var x = $(".main-nav")[0];
+        //Do the opposite of the current state of the element
+        if (x.style.display === "block") {
+          open = false;
+          x.style.display = "none";
+        } else {
+          x.style.display = "block";
+          open = true;
+        }
+      }
 
-});
-</script>
+      //On window resize/scroll
+      $(window).on("load resize", function () {
+        //Check if the window is small enough for mobile
+        var windowWidth = $(window).width();
+        if (windowWidth < 780) {
+          //Show hamburger icon
+          $(".icon")[0].style.display = "block";
+          //check if hamburger is open or not
+          if (open == false) {
+            //Change dropdown
+            $(".main-nav")[0].style.display = "none";
+          } else {
+            //Change dropdown
+            $(".main-nav")[0].style.display = "block";
+          }
+        } else {
+          //If the window is bigger than mobile mode it show the links
+          $(".main-nav a").fadeIn();
+          //Change dropdown to reconfigure
+          $(".main-nav")[0].style.display = "flex";
+          //Hide hamburger icon
+          $(".icon")[0].style.display = "none";
+        }
+      });
+    </script>
+  </body>
+</html>
+
+<!-- Chef Hat:
+
+https://gallery.yopriceville.com/Free-Clipart-Pictures/Hats-PNG/Chef_Hat_PNG_Clipart#.X5N7_IgzaUk
+
+ -->

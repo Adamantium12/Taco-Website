@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<head>
+    <!-- Set Device Viewport for Media Queries -->
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Recipe</title>
+    <!-- CSS Links -->
+   
+    <link rel="stylesheet" type="text/css" href="recipe.css" />
+</head>
+<body style="overflow-x: hidden;">
+    <header class="header">
+  <div class="logo"></div>
+
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <div class="menu-wrapper">
+  <div class="hamburger-menu"></div>    
+</div>
+      </a> 
+        <ul class="main-nav">
+      
+          <li class="first_li"><a href="about.html">About</a></li>
+          <li><a href="recipe.html">Recipes</a></li>
+          <li class="last_li"><a href="#">Contact</a></li>
+      </ul>
+  </header> 
+  <div class="repeat_bg">
+<div class="lane_1">
+  <div class="lane_1_header">Taco Recipe</div>
+  <div class="content_container">
+  <div class="taco_row"></div>
+  <div class="image_caption">
+    <h1>Calories: <span>259</span></h1>
+    <h1>Time: <span>1 hour</span></h1>
+  </div>
+  <div class="ingredients_parent">
+  <h1 class="ingredients">Ingredients</h1>
+  <ul>
+  <li>1 tbsp oil</li> 
+  <li>1 onion</li> 
+  <li>500 grams minced beef</li> 
+  <li>500 grams shredded chicken</li> 
+  <li>1 Strand of Rosemary</li> 
+  <li>2 Teaspoons of sesame seeds</li> 
+  <li>1 jar Heinz Spicy Nachos sauce</li> 
+  <li>12 tacos</li> 
+  <h1 class="ingredients_toppings">Toppings </h1>
+  <li>Chopped capsicum</li> 
+  <li>Grated cheese</li> 
+  <li>Chopped lettuce</li> 
+
+
+
+
+
+
+
+
+
+</ul>
+</div>
+<div class="method_parent">
+  <h1>Method</h1>
+   <h2>Mince:</h2>
+  <ul>
+    <li><span>1.</span> Heat oil in a pan over high heat. Add onion and cook for 2 minutes.</li>
+    <li><span>2.</span> Add mince and cook, breaking up with a wooden spoon, until browned.</li>
+    <li><span>3.</span> Add Heinz Spicy Nachos sauce stir and bring to the boil. </li>
+    <li><span>4.</span> Serve in the tacos with additional toppings.</li>
+
+  </ul>
+   <h2>Chicken:</h2>
+  <ul>
+    <li><span>1.</span> Heat oil in a pan over high heat. Add onion and cook for 2 minutes.</li>
+    <li><span>2.</span> Add chicken and cook, breaking up with a wooden spoon, until browned.</li>
+    <li><span>3.</span> Add rosemary and crushed sesame seeds.</li>
+    <li><span>4.</span> Serve in the tacos with additional toppings.</li>
+
+  </ul>
+  
+
+</div>
+</div>
+</div></div>
+   
+     
+
+  <script src="jquery-3.3.1.min.js"></script>    
+<script type="text/javascript">
+  
+ $(".logo").on('click', function() {
+    window.location = "index.html";
+   });
+ 
+ 
+  (function () {
+  $('.menu-wrapper').on('click', function() {
+    $('.hamburger-menu').toggleClass('animate');
+  })
+})();
+  var open = false;
+//Function called from hamburger press
+function myFunction() {
+  //Get Navigation element
+  var x = $('.main-nav')[0];
+  //Do the opposite of the current state of the element
+  if (x.style.display === "block") {
+    open = false;
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+    open = true;
+  }
+}
+
+
+//On window resize/scroll
+$(window).on('load resize', function() {
+  //Check if the window is small enough for mobile
+    var windowWidth = $(window).width();
+    if (windowWidth < 780) {
+      //Show hamburger icon
+      $('.icon')[0].style.display = "block";
+      //check if hamburger is open or not
+      if (open == false) {
+        //Change dropdown
+      $('.main-nav')[0].style.display = "none";   
+      }else{
+        //Change dropdown
+        $('.main-nav')[0].style.display = "block"; 
+      }       
+    } else{
+      //If the window is bigger than mobile mode it show the links  
+        $('.main-nav a').fadeIn();
+        //Change dropdown to reconfigure
+        $('.main-nav')[0].style.display = "flex";
+        //Hide hamburger icon
+        $('.icon')[0].style.display = "none";
+    }
+
+});
+</script>
+</body>
+</html>

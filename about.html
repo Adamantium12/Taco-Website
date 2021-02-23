@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Set Device Viewport for Media Queries -->
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>About</title>
+    <!-- CSS Links -->
+   
+    <link rel="stylesheet" type="text/css" href="about.css" />
+</head>
+<body style="overflow-x: hidden;">
+    <header class="header">
+   <div class="logo"></div>
+
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <div class="menu-wrapper">
+  <div class="hamburger-menu"></div>    
+</div>
+      </a> 
+         <ul class="main-nav">
+      
+          <li class="first_li"><a href="about.html">About</a></li>
+          <li><a href="recipe.html">Recipes</a></li>
+          <li class="last_li"><a href="#">Contact</a></li>
+      </ul>
+  </header> 
+<div class="lane_1">
+  <div class="lane_1_header"> Etymology</div>
+  <div class="lane_1_text">
+   
+
+Various taco ingredients
+The origins of the taco are not precisely known, and etymologies for the culinary usage of the word are generally theoretical. According to the Real Academia Española, publisher of Diccionario de la Lengua Española, the word taco describes a typical Mexican dish of a maize tortilla folded around food. This meaning of the Spanish word "taco" is a Mexican innovation, but in other dialects "taco" is used to mean "wedge; wad, plug; billiard cue; blowpipe; ramrod; short, stocky person; [or] short, thick piece of wood." In this non-culinary usage, the word "taco" has cognates in other European languages, including the French word "tache" and the English word "tack (nail)."[citation needed]
+
+According to one etymological theory, the culinary meaning of "taco" derives from its "plug" meaning as employed among Mexican silver miners, who used explosive charges in plug form consisting of a paper wrapper and gunpowder filling.
+
+Indigenous origins for the culinary word "taco" are also proposed. One possibility is that the word derives from the Nahuatl word "tlahco", meaning "half" or "in the middle," in the sense that food would be placed in the middle of a tortilla. Furthermore, dishes analogous to the taco were known to have existed in Pre-Columbian society—for example, the Nahuatl word "tlaxcalli" (a type of corn tortilla).
+</div>
+<div class="lane_1_header"> History</div>
+  <div class="lane_1_text">
+The taco predates the arrival of the Spanish in Mexico. There is anthropological evidence that the indigenous people living in the lake region of the Valley of Mexico traditionally ate tacos filled with small fish. Writing at the time of the Spanish conquistadors, Bernal Díaz del Castillo documented the first taco feast enjoyed by Europeans, a meal which Hernán Cortés arranged for his captains in Coyoacán.
+  </div>
+<a href="https://en.wikipedia.org/wiki/Taco">Link to resource</a>
+</div>
+   
+     
+
+  <script src="jquery-3.3.1.min.js"></script>    
+<script type="text/javascript">
+  
+
+  $(".logo").on('click', function() {
+    window.location = "index.html";
+   });
+ 
+  (function () {
+  $('.menu-wrapper').on('click', function() {
+    $('.hamburger-menu').toggleClass('animate');
+  })
+})();
+  var open = false;
+//Function called from hamburger press
+function myFunction() {
+  //Get Navigation element
+  var x = $('.main-nav')[0];
+  //Do the opposite of the current state of the element
+  if (x.style.display === "block") {
+    open = false;
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+    open = true;
+  }
+}
+
+
+//On window resize/scroll
+$(window).on('load resize', function() {
+  //Check if the window is small enough for mobile
+    var windowWidth = $(window).width();
+    if (windowWidth < 780) {
+      //Show hamburger icon
+      $('.icon')[0].style.display = "block";
+      //check if hamburger is open or not
+      if (open == false) {
+        //Change dropdown
+      $('.main-nav')[0].style.display = "none";   
+      }else{
+        //Change dropdown
+        $('.main-nav')[0].style.display = "block"; 
+      }       
+    } else{
+      //If the window is bigger than mobile mode it show the links  
+        $('.main-nav a').fadeIn();
+        //Change dropdown to reconfigure
+        $('.main-nav')[0].style.display = "flex";
+        //Hide hamburger icon
+        $('.icon')[0].style.display = "none";
+    }
+
+});
+</script>
+</body>
+</html>
